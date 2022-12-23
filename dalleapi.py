@@ -7,7 +7,6 @@ image_prompt_list = ["a labrador chilling on the beach with a cocktail in his pa
 def generate_image(image_prompt_list):
   for image_prompt in image_prompt_list:
     
-    
     openai.api_key_path = "OPENAI_API_KEY.env"
     response = openai.Image.create(
       prompt=f"{image_prompt}",
@@ -16,7 +15,6 @@ def generate_image(image_prompt_list):
     )
     image_url = response['data'][0]['url']
     save_image(image_url, image_prompt)
-
 
 # saving image in specified path
 
